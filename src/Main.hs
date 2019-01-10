@@ -18,6 +18,8 @@ main = do
     let commandLines = map ("- cmd: " ++) (getCommands (lines zshHistory))
         dateLines = map ("  when: " ++) (getDates (lines zshHistory))
         fishHistory = combine commandLines dateLines where
+          combine [] _ = []
+          combine _ [] = []
           combine (c:cs) (d:ds) = c : d : combine cs ds
     writeFile "fish_history" (unlines fishHistory)
     

@@ -1,5 +1,7 @@
 # zsh-history-to-fish
 
+Migrate your zsh history to fish.
+
 ### Instructions:
 
 0. Install curl or wget.
@@ -30,7 +32,11 @@
     ```
     cd zsh-history-to-fish
     ```
-5. Run it:
+5. Build project:
+    ```
+    stack build
+    ```
+6. Run the program:
     ```
     stack runhaskell src/Main.hs
     ```

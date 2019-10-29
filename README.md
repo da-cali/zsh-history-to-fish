@@ -1,43 +1,39 @@
-# zsh-history-to-fish
+# zsh-fish History Converter
 
-Migrate your zsh history to fish.
+Migrate your zsh history to fish and vice versa.
 
 ### Instructions:
 
-0. Install curl or wget.
+0. Install [stack](https://docs.haskellstack.org/en/stable/README/) if necessary.
+
+1. Clone repository:
     ```
-    sudo apt install curl
+    git clone https://github.com/da-cali/zshFishHistoryConverter
     ```
-    or:
+2. Open folder:
     ```
-    sudo apt install wget
+    cd zshFishHistoryConverter
     ```
-1. Install [stack](https://docs.haskellstack.org/en/stable/README/):
-    ```
-    curl -sSL https://get.haskellstack.org/ | sh
-    ```
-    or:
-    ```
-    wget -qO- https://get.haskellstack.org/ | sh
-    ```
-2. Clone repository:
-    ```
-    git clone https://github.com/da-cali/zsh-history-to-fish
-    ```
-3. Copy zsh history to repository folder:
-    ```
-    cp .zsh_history zsh-history-to-fish
-    ```
-4. Open folder:
-    ```
-    cd zsh-history-to-fish
-    ```
-5. Build project:
+3. Build project:
     ```
     stack build
     ```
-6. Run the program:
+4. Migrate your history:
+    
+    From zsh to fish:
     ```
-    stack runhaskell src/Main.hs
+    cp .zsh_history zshFishHistoryConverter
     ```
-Now you have a file named "fish_history" with your zsh history in fish format.
+    and then:
+    ```
+    stack runhaskell src/Zsh2fish.hs
+    ```
+
+    From fish to zsh:
+    ```
+    cp .local/share/fish/fish_history fish-history-to-zsh
+    ```
+    and then:
+    ```
+    stack runhaskell src/Fish2zsh.hs
+    ```

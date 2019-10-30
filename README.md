@@ -22,7 +22,7 @@ Migrate your zsh history to fish and vice versa.
     
     From zsh to fish:
     ```
-    cp .zsh_history zshFishHistoryConverter
+    cp ~/.zsh_history ~/zshFishHistoryConverter
     ```
     and then:
     ```
@@ -31,7 +31,7 @@ Migrate your zsh history to fish and vice versa.
 
     From fish to zsh:
     ```
-    cp .local/share/fish/fish_history fish-history-to-zsh
+    cp ~/.local/share/fish/fish_history ~/zshFishHistoryConverter
     ```
     and then:
     ```
